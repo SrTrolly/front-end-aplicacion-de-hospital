@@ -8,6 +8,7 @@ import { NopagefoundComponent } from "../nopagefound/nopagefound.component";
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RjxsComponent } from './rjxs/rjxs.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: PagesComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "",
