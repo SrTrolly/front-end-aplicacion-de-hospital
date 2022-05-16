@@ -3,9 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from '../../models/usuario.model';
 import { FileUploadService } from '../../services/file-upload.service';
-import { FileUpload } from '../../interfaces/upload-file.interface';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Component({
