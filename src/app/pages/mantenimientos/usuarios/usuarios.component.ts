@@ -1,3 +1,4 @@
+
 import { Usuario } from './../../../models/usuario.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsuarioService } from '../../../services/usuario.service';
@@ -62,7 +63,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     } else {
       return this.busquedasService.buscar("usuarios", termino).subscribe(resp => {
         // console.log(resp);
-        this.usuarios = resp
+        this.usuarios = resp as Usuario[]
       })
     }
 

@@ -14,6 +14,10 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RjxsComponent } from './rjxs/rjxs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { DoctoresComponent } from './mantenimientos/doctores/doctores.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { DoctorComponent } from './mantenimientos/doctores/doctor.component';
 
 
 
@@ -28,7 +32,10 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     PromesasComponent,
     RjxsComponent,
     PerfilComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    HospitalesComponent,
+    DoctoresComponent,
+    DoctorComponent
   ],
   exports: [
     DashboardComponent,
@@ -44,7 +51,8 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    NgChartsModule
+    NgChartsModule,
+    PipesModule
   ]
 })
 export class PagesModule { }

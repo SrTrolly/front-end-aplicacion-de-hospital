@@ -4,6 +4,8 @@ import { environment } from '../../environments/environment';
 import { map } from 'rxjs';
 import { Busqueda } from '../interfaces/busquedas.interface';
 import { Usuario } from '../models/usuario.model';
+import { Hospital } from '../models/hospital.model';
+import { Doctor } from '../models/doctor.model';
 
 
 const base_url = environment.base_url;
@@ -28,10 +30,18 @@ export class BusquedasService {
     }
   }
 
-  transformarUsuarios(resultados: Usuario[]): Usuario[] {
+  private transformarUsuarios(resultados: Usuario[]): Usuario[] {
     return resultados.map(
       usuario => new Usuario(usuario.nombre, usuario.email, "", usuario.img, usuario.google, usuario.rol, usuario.uid)
     );
+  }
+
+  private transformarHospitales(resultados: Hospital[]): Hospital[] {
+    return resultados;
+  }
+
+  private transformarDoctores(resultados: Doctor[]): Doctor[] {
+    return resultados;
   }
 
 
@@ -46,6 +56,12 @@ export class BusquedasService {
             return this.transformarUsuarios(resp.resultados)
             break;
 
+          case "hospitales":
+            return this.transformarHospitales(resp.resultados)
+
+
+          case "doctores":
+            return this.transformarDoctores(resp.resultados);
           default:
             return []
             break;

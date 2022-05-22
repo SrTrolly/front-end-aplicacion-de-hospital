@@ -1,4 +1,5 @@
 import { Usuario } from './../models/usuario.model';
+import { Hospital } from '../models/hospital.model';
 
 
 export interface Busqueda {
