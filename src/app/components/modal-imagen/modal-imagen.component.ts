@@ -32,7 +32,7 @@ export class ModalImagenComponent implements OnInit {
     var file: File;
 
     file = event.target.files[0]
-    console.log(file);
+
     this.imagenSubir = file;
     if (!file) {
       return this.imgTemp = null;
@@ -54,7 +54,7 @@ export class ModalImagenComponent implements OnInit {
     const tipo = this.modalImagenService.tipo;
 
     this.fileUploadService.actualizarFoto(this.imagenSubir, tipo, id).subscribe(resp => {
-      console.log(resp)
+
       if (!resp.ok) {
         this.cerrarModal();
         return Swal.fire({

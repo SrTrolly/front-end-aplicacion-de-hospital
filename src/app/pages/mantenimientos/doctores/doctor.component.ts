@@ -77,7 +77,7 @@ export class DoctorComponent implements OnInit {
 
       this.doctorService.actualizarDoctor(id!, nombre, hospital!).subscribe(resp => {
         Swal.fire("Actualizado", `${nombre} creado correctamente`, "success");
-        console.log(resp);
+
 
       })
     } else {

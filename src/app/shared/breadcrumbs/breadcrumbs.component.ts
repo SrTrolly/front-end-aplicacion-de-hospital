@@ -15,7 +15,7 @@ export class BreadcrumbsComponent implements OnDestroy {
 
   constructor(private router: Router) {
     this.tituloSubs$ = this.getArgumentosRuta().subscribe(data => {
-      console.log(data)
+
       this.titulo = data['titulo'];
 
       const tituloPagina = `AdminPro- ${this.titulo}`;

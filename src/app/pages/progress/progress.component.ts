@@ -21,7 +21,7 @@ export class ProgressComponent {
   }
 
   cambioValorHijo(evento: number) {
-    console.log(evento);
+
   }
 
 }

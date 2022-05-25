@@ -48,7 +48,7 @@ export class PerfilComponent implements OnInit {
     var file: File;
 
     file = event.target.files[0]
-    console.log(file);
+
     this.imagenSubir = file;
     if (!file) {
       return this.imgTemp = null;
@@ -66,7 +66,7 @@ export class PerfilComponent implements OnInit {
 
   subirImagen() {
     this.fileUploadService.actualizarFoto(this.imagenSubir, "usuarios", this.usuario.uid || "").subscribe(resp => {
-      console.log(resp)
+
       if (!resp.ok) {
         return Swal.fire({
           title: "Error!",

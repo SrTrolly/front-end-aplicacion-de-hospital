@@ -56,7 +56,7 @@ export class UsuarioService {
   googleinit() {
 
     return new Promise<void>(resolve => {
-      console.log("google init ");
+
 
       gapi.load('auth2', () => {
         // Retrieve the singleton for the GoogleAuth library and set up the client.
@@ -150,7 +150,7 @@ export class UsuarioService {
     const url = `${base_url}/usuarios?desde=${desde}`;
     return this.http.get<CargarUsuario>(url, this.headers).pipe(
       map(resp => {
-        console.log(resp);
+
         const usuarios = resp.usuarios.map(user => new Usuario(user.nombre, user.email, user.rol, user.password, user.img, user.google, user.uid));
         return {
           total: resp.total,

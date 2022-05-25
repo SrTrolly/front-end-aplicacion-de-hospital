@@ -46,7 +46,7 @@ export class RjxsComponent implements OnDestroy {
     //   () => console.info("Obs terminado")
     // );
 
-    this.intervalSubs = this.retornaIntervalo().subscribe(console.log)
+
 
 
 

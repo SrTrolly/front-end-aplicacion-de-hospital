@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
   }
 
   attachSignin(element: any) {
-    console.log(element.id);
+
     this.auth2.attachClickHandler(element, {},
       (googleUser: any) => {
         const id_token = googleUser.getAuthResponse().id_token;

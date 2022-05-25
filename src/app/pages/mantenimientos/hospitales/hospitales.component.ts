@@ -74,7 +74,7 @@ export class HospitalesComponent implements OnInit, OnDestroy {
     if (valor.value?.trim().length! > 0) {
       this.hospitalService.crearHospital(valor.value!).subscribe(resp => {
         this.hospitales.push(resp.hospitalDB);
-        console.log(resp.hospitalDB)
+
       })
     }
 

@@ -45,7 +45,7 @@ export class DoctoresComponent implements OnInit, OnDestroy {
     this.doctorService.cargarDoctores().subscribe(resp => {
       this.cargando = false;
       this.doctores = resp
-      console.log(this.doctores)
+
     })
   }
 
