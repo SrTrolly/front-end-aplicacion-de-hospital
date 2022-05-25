@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs';
-import { Busqueda } from '../interfaces/busquedas.interface';
+import { Busqueda, BusquedaCompleta } from '../interfaces/busquedas.interface';
 import { Usuario } from '../models/usuario.model';
 import { Hospital } from '../models/hospital.model';
 import { Doctor } from '../models/doctor.model';
@@ -32,7 +32,7 @@ export class BusquedasService {
 
   private transformarUsuarios(resultados: Usuario[]): Usuario[] {
     return resultados.map(
-      usuario => new Usuario(usuario.nombre, usuario.email, "", usuario.img, usuario.google, usuario.rol, usuario.uid)
+      usuario => new Usuario(usuario.nombre, usuario.email, usuario.rol, usuario.password, usuario.img, usuario.google, usuario.uid)
     );
   }
 
@@ -42,6 +42,12 @@ export class BusquedasService {
 
   private transformarDoctores(resultados: Doctor[]): Doctor[] {
     return resultados;
+  }
+
+
+  busquedaGlobal(termino: string) {
+    const url = `${base_url}/todo/${termino}`;
+    return this.http.get<BusquedaCompleta>(url, this.headers);
   }
 
 

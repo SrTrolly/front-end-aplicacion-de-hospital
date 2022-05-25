@@ -1,5 +1,7 @@
-import { Usuario } from './../models/usuario.model';
+import { Doctor } from '../models/doctor.model';
 import { Hospital } from '../models/hospital.model';
+import { Usuario } from './../models/usuario.model';
+
 
 
 export interface Busqueda {
@@ -15,6 +17,16 @@ export interface Resultado {
   uid: string;
   img?: string;
 }
+
+export interface BusquedaCompleta {
+  ok: boolean;
+  msg: string;
+  usuarios: Usuario[];
+  doctores: Doctor[];
+  hospitales: Hospital[];
+}
+
+
 
 
 

@@ -8,10 +8,10 @@ export class Usuario {
   constructor(
     public nombre: string,
     public email: string,
+    public rol: "ADMIN_ROLE" | "USER_ROLE",
     public password?: string,
     public img?: string,
     public google?: boolean,
-    public rol?: string,
     public uid?: string
 
   ) { }

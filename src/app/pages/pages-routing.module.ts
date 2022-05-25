@@ -1,10 +1,10 @@
+import { BusquedaComponent } from './busqueda/busqueda.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { ProgressComponent } from './progress/progress.component';
-import { NopagefoundComponent } from "../nopagefound/nopagefound.component";
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RjxsComponent } from './rjxs/rjxs.component';
@@ -14,6 +14,7 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
 import { DoctoresComponent } from './mantenimientos/doctores/doctores.component';
 import { DoctorComponent } from './mantenimientos/doctores/doctor.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 
 
@@ -45,6 +46,11 @@ const routes: Routes = [
         data: { titulo: "Ajustes de cuenta" }
       },
       {
+        path: "buscar/:termino",
+        component: BusquedaComponent,
+        data: { titulo: "Busquedas" }
+      },
+      {
         path: "promesas",
         component: PromesasComponent,
         data: { titulo: "Promesas" }
@@ -63,6 +69,7 @@ const routes: Routes = [
       //Mnatenimientos
       {
         path: "usuarios",
+        canActivate: [AdminGuard],
         component: UsuariosComponent,
         data: { titulo: "Mantenimiento de usuarios" }
       },

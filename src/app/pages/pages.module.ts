@@ -18,6 +18,7 @@ import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.comp
 import { DoctoresComponent } from './mantenimientos/doctores/doctores.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { DoctorComponent } from './mantenimientos/doctores/doctor.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -35,7 +36,8 @@ import { DoctorComponent } from './mantenimientos/doctores/doctor.component';
     UsuariosComponent,
     HospitalesComponent,
     DoctoresComponent,
-    DoctorComponent
+    DoctorComponent,
+    BusquedaComponent
   ],
   exports: [
     DashboardComponent,
